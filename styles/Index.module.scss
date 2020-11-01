@@ -199,12 +199,12 @@ $computerScreenMax: 4800px;
 }
 
 .contact-section {
-  min-height: 40vh;
+  min-height: 20vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding-bottom: 20vh;
+  padding-bottom: 10vh;
   @media screen and (max-width: $mobileScreenMax) and (min-width: $mobileScreenMin) { 
     transform: none !important;
   }
