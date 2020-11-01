@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion, useAnimation } from 'framer-motion'
+import Typed from 'react-typed';
 import { useInView } from "react-intersection-observer";
 import fadeInUp from '../animations/fadeInUp'
 import '../styles/Index.module.scss';
@@ -68,6 +69,37 @@ const Index = () => {
     }
   }, [controls2, inView2]);
 
+  const [tools, setTools] = useState([{
+      logo: 'https://imgur.com/ZjOSRuc.png',
+      label: 'React',
+      rounded: false,
+    }, {
+      logo: 'https://imgur.com/nJIx73x.png',
+      label: 'NodeJS',
+      rounded: true,
+    }, {
+      logo: 'https://imgur.com/A04dz2C.png',
+      label: 'Mongodb',
+      rounded: true,
+    }, {
+      logo: 'https://imgur.com/aew5EFH.png',
+      label: 'Redux',
+      rounded: false,
+    }, {
+      logo: 'https://imgur.com/P6H0JyK.png',
+      label: 'Jest',
+      rounded: false,
+    }, {
+      logo: 'https://imgur.com/wD1H7pq.png',
+      label: 'AWS',
+      rounded: true,
+    }, {
+      logo: 'https://imgur.com/gZDx2fX.png',
+      label: 'Docker',
+      rounded: true,
+    },
+  ])
+
   return (
     <motion.div  initial="initial" exit={{ opacity: 0 }}>
       <HeaderNavigation />
@@ -75,7 +107,11 @@ const Index = () => {
         <motion.div {...firstNameAnimation} className="title">
           Lucas<br />Barros
           <br />
-          <div className="subtitle"><span>F</span>ullstack Developer</div>
+          <div className="subtitle">
+            {<Typed strings={['Fullstack Developer', 'Working with responsibility']}
+                    typeSpeed={80}
+                />}
+          </div>
         </motion.div>
         <motion.img className="picture1" {...homePictureAnimation} src="https://imgur.com/SmqPv9i.jpeg" />
       </div>
@@ -99,13 +135,14 @@ const Index = () => {
                 animate={controls2}
                 initial={{ opacity: 0, transition: { duration: 1, ease: easing }}}
                 className="about-section-icons">
-              <img className="about-section-icon" src="https://imgur.com/ZjOSRuc.png" />
-              <img className="about-section-icon-rounded" src="https://imgur.com/nJIx73x.png" />
-              <img className="about-section-icon-rounded" src="https://imgur.com/A04dz2C.png" />
-              <img className="about-section-icon" src="https://imgur.com/aew5EFH.png" />
-              <img className="about-section-icon" src="https://imgur.com/P6H0JyK.png" />
-              <img className="about-section-icon-rounded" src="https://imgur.com/wD1H7pq.png" />
-              <img className="about-section-icon-rounded" src="https://imgur.com/gZDx2fX.png" />
+              {
+                tools.map(el => (
+                <motion.img
+                  whileHover={{ scale: 1.2 }}
+                  className={`about-section-icon${el.rounded ? '-rounded' : ''}`} 
+                  src={el.logo}
+                />))
+              }
             </motion.div>
           </div>
         </div>
