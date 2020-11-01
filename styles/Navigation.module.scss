@@ -1,0 +1,25 @@
+$darkColor: #1D2027;
+$lightColor: #fff;
+$redColor: #F00;
+
+.navigation-container {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  z-index: 1200;
+  display: flex;
+  flex-direction: row;
+}
+
+.navigation-items {
+  font-size: 1.5rem;
+  color: $darkColor;
+  cursor: pointer;
+  transition: 0.3s;
+  margin: 0px 10px;
+}
+
+.navigation-items:hover {
+  color: $redColor !important;
+  cursor: pointer;
+}
