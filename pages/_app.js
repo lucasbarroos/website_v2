@@ -15,6 +15,7 @@ class MyApp extends App {
      <>
       <Head>
           <title> Lucas Barros </title>
+          <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
       </Head>
         <AnimatePresence exitBeforeEnter>
           <Component {...pageProps} key={router.route} />

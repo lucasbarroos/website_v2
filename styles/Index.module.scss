@@ -2,12 +2,26 @@ $imageWidth: 100vh;
 $firstSecondMinHeight: 80vh;
 $secondSecondMinHeight: 40vh;
 
+$mobileScreenMax: 600px;
+$mobileScreenMin: 0px;
+
+$tabletScreenMax: 1120px;
+$tabletScreenMin: 600px;
+
+$computerScreenMin: 1120px;
+$computerScreenMax: 4800px;
+
+
 .container {
   position: relative;
   display: grid;
   grid-template-columns: 50% 50%;
   min-height: $firstSecondMinHeight;
   align-items: center;
+  @media screen and (max-width: $mobileScreenMax) and (min-width: $mobileScreenMin) { 
+    grid-template-columns: 100%;
+    max-width: 100vw;
+  }
 }
 
 .title {
@@ -16,14 +30,22 @@ $secondSecondMinHeight: 40vh;
   font-weight: bold;
   text-align: right;
   z-index: 100;
+  @media screen and (max-width: $mobileScreenMax) and (min-width: $mobileScreenMin) { 
+    font-size: 4rem;
+    text-align: center;
+  }
 }
 
 .subtitle {
   color: black;
-  font-size: 2.3rem;
+  font-size: 1.8rem;
   font-weight: bold;
   text-align: right;
   z-index: 100;
+  @media screen and (max-width: $mobileScreenMax) and (min-width: $mobileScreenMin) { 
+    font-size: 2rem;
+    text-align: center;
+  }
 }
 
 .subtitle span {
@@ -36,6 +58,9 @@ $secondSecondMinHeight: 40vh;
   text-align: left;
   min-width: $imageWidth;
   z-index: -1;
+  @media screen and (max-width: $mobileScreenMax) and (min-width: $mobileScreenMin) { 
+    display: none;
+  }
 }
 
 .about-container {
@@ -50,6 +75,10 @@ $secondSecondMinHeight: 40vh;
   border-style: solid;
   border-color: transparent #1D2027 #1D2027 transparent;
   border-width: 0px 0px 75px calc(100vw - 15px);
+  @media screen and (max-width: $mobileScreenMax) and (min-width: $mobileScreenMin) { 
+    border-width: 0px 0px 75px calc(100vw);
+    margin-bottom: -1px;
+  }
 }
 .about-border-effect-end {
   line-height: 0;
@@ -58,7 +87,11 @@ $secondSecondMinHeight: 40vh;
   border-style: solid;
   border-color: transparent #1D2027 #1D2027 transparent;
   border-width: 0px 0px 75px calc(100vw - 15px);
-  transform: rotate(180deg)
+  transform: rotate(180deg);
+  @media screen and (max-width: $mobileScreenMax) and (min-width: $mobileScreenMin) { 
+    border-width: 0px 0px 75px calc(100vw);
+    margin-top: -1px;
+  }
 }
 
 .about-section-first-content {
@@ -70,17 +103,28 @@ $secondSecondMinHeight: 40vh;
   background: #1D2027;
   color: white;
   width: 100%;
+  @media screen and (max-width: $mobileScreenMax) and (min-width: $mobileScreenMin) {
+    grid-template-columns: 100%;
+  }
 }
 
 .about-section-picture-content {
   text-align: right;
   padding: 20px 3vw 20px 20px;
+  @media screen and (max-width: $mobileScreenMax) and (min-width: $mobileScreenMin) {
+    padding: 0px;
+    text-align: center;
+  }
 }
 
 .about-section-picture {
   height: $secondSecondMinHeight;
   width: $secondSecondMinHeight;
   border-radius: 50%;
+  @media screen and (max-width: $mobileScreenMax) and (min-width: $mobileScreenMin) {
+    width: 30vh;
+    height: 30vh;
+  }
 }
 
 .about-section-text {
@@ -88,6 +132,11 @@ $secondSecondMinHeight: 40vh;
   font-size: 1.6rem;
   text-align: left;
   padding: 20px 5vw 20px 20px;
+  @media screen and (max-width: $mobileScreenMax) and (min-width: $mobileScreenMin) {
+    padding: 20px;
+    text-align: justify;
+    font-size: 1.2rem;
+  }
 }
 
 
@@ -100,16 +149,30 @@ $secondSecondMinHeight: 40vh;
   background: #1D2027;
   color: white;
   width: 100%;
+  @media screen and (max-width: $mobileScreenMax) and (min-width: $mobileScreenMin) { 
+    margin-top: -1px;
+  }
 }
 
 .about-section-second-content p {  
   font-size: 1.8rem;
+  @media screen and (max-width: $mobileScreenMax) and (min-width: $mobileScreenMin) {
+    padding: 10px;
+    font-size-adjust: 1.4rem;
+    text-align: center;
+  }
 }
 
 .about-section-icons {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   margin-bottom: 20px;
+  @media screen and (max-width: $mobileScreenMax) and (min-width: $mobileScreenMin) { 
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+  }
 }
 
 .about-section-icon {
@@ -117,6 +180,10 @@ $secondSecondMinHeight: 40vh;
   width: 90px;
   margin: 0px 2vw 10px 2vw;
   cursor: pointer;
+  @media screen and (max-width: $mobileScreenMax) and (min-width: $mobileScreenMin) { 
+    height: 60px;
+    width: 60px;
+  }
 }
 
 .about-section-icon-rounded {
@@ -125,6 +192,10 @@ $secondSecondMinHeight: 40vh;
   border-radius: 50px;
   margin: 0px 2vw 10px 2vw;
   cursor: pointer;
+  @media screen and (max-width: $mobileScreenMax) and (min-width: $mobileScreenMin) { 
+    height: 60px;
+    width: 60px;
+  }
 }
 
 .contact-section {
@@ -134,6 +205,9 @@ $secondSecondMinHeight: 40vh;
   align-items: center;
   flex-direction: column;
   padding-bottom: 20vh;
+  @media screen and (max-width: $mobileScreenMax) and (min-width: $mobileScreenMin) { 
+    transform: none !important;
+  }
 }
 
 .contact-section p {
@@ -150,6 +224,10 @@ $secondSecondMinHeight: 40vh;
   border-radius: 7px;
   border: none;
   background-color: #ddd;
+  @media screen and (max-width: $mobileScreenMax) and (min-width: $mobileScreenMin) { 
+    transform: none !important;
+    width: 80vw;
+  }
 }
 
 .contact-input:active {
@@ -175,6 +253,10 @@ $secondSecondMinHeight: 40vh;
   background-color: #ddd;
   cursor: pointer;
   transition: 0.3s;
+  @media screen and (max-width: $mobileScreenMax) and (min-width: $mobileScreenMin) { 
+    transform: none !important;
+    width: 85vw;
+  }
 }
 
 .contact-button:hover {

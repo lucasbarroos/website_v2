@@ -2,6 +2,15 @@ $darkColor: #1D2027;
 $lightColor: #fff;
 $redColor: #F00;
 
+$mobileScreenMax: 600px;
+$mobileScreenMin: 0px;
+
+$tabletScreenMax: 1120px;
+$tabletScreenMin: 600px;
+
+$computerScreenMin: 1120px;
+$computerScreenMax: 4800px;
+
 .navigation-container {
   position: absolute;
   top: 10px;
@@ -9,6 +18,9 @@ $redColor: #F00;
   z-index: 1200;
   display: flex;
   flex-direction: row;
+  @media screen and (max-width: $mobileScreenMax) and (min-width: $mobileScreenMin) { 
+    display: none;
+  }
 }
 
 .navigation-items {

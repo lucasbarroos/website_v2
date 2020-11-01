@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { motion, useAnimation } from 'framer-motion'
 import Typed from 'react-typed';
 import { useInView } from "react-intersection-observer";
-import fadeInUp from '../animations/fadeInUp'
 import '../styles/Index.module.scss';
 import '../styles/Navigation.module.scss';
 import HeaderNavigation from '../components/HeaderNavigation';
@@ -21,7 +20,7 @@ const homePictureAnimation = {
 };
 
 const aboutPictureAnimation = {
-  initial: { x: -400, opacity: 0.6, transition: { duration: 0.5, ease: easing } },
+  initial: { x: -400, opacity: 0, transition: { duration: 0.5, ease: easing } },
   animate: {
     x: 0,
     opacity: 1,
@@ -33,7 +32,7 @@ const aboutPictureAnimation = {
 };
 
 const firstNameAnimation = {
-  initial: { x: 400, opacity: 0.6, transition: { duration: 0.5, ease: easing } },
+  initial: { x: 400, opacity: 0, transition: { duration: 0.5, ease: easing } },
   animate: {
     x: 0,
     opacity: 1,
@@ -108,7 +107,7 @@ const Index = () => {
           Lucas<br />Barros
           <br />
           <div className="subtitle">
-            {<Typed strings={['Fullstack Developer', 'Working with responsibility']}
+            {<Typed strings={['Fullstack Developer', 'Working with responsibility', 'Need a developer?', 'Contact me!']}
                     typeSpeed={80}
                 />}
           </div>
@@ -139,6 +138,7 @@ const Index = () => {
                 tools.map(el => (
                 <motion.img
                   whileHover={{ scale: 1.2 }}
+                  title={el.label}
                   className={`about-section-icon${el.rounded ? '-rounded' : ''}`} 
                   src={el.logo}
                 />))
