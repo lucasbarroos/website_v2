@@ -18,6 +18,11 @@ $computerScreenMax: 4800px;
   grid-template-columns: 50% 50%;
   min-height: $firstSecondMinHeight;
   align-items: center;
+  @media screen and (max-width: $tabletScreenMax) and (min-width: $tabletScreenMin) { 
+    grid-template-columns: 50% 50%;
+    max-width: 100vw;
+    min-height: 50vh;
+  }
   @media screen and (max-width: $mobileScreenMax) and (min-width: $mobileScreenMin) { 
     grid-template-columns: 100%;
     max-width: 100vw;
@@ -30,8 +35,12 @@ $computerScreenMax: 4800px;
   font-weight: bold;
   text-align: right;
   z-index: 100;
-  @media screen and (max-width: $mobileScreenMax) and (min-width: $mobileScreenMin) { 
+  @media screen and (max-width: $tabletScreenMax) and (min-width: $tabletScreenMin) { 
     font-size: 4rem;
+    text-align: center;
+  }
+  @media screen and (max-width: $mobileScreenMax) and (min-width: $mobileScreenMin) { 
+    font-size: 6rem;
     text-align: center;
   }
 }
@@ -42,6 +51,10 @@ $computerScreenMax: 4800px;
   font-weight: bold;
   text-align: right;
   z-index: 100;
+  @media screen and (max-width: $tabletScreenMax) and (min-width: $tabletScreenMin) { 
+    font-size: 2rem;
+    text-align: center;
+  }
   @media screen and (max-width: $mobileScreenMax) and (min-width: $mobileScreenMin) { 
     font-size: 2rem;
     text-align: center;
@@ -58,6 +71,9 @@ $computerScreenMax: 4800px;
   text-align: left;
   min-width: $imageWidth;
   z-index: -1;
+  @media screen and (max-width: $tabletScreenMax) and (min-width: $tabletScreenMin) { 
+   min-width: 40vh;
+  }
   @media screen and (max-width: $mobileScreenMax) and (min-width: $mobileScreenMin) { 
     display: none;
   }
@@ -66,6 +82,9 @@ $computerScreenMax: 4800px;
 .about-container {
   margin-top: -12vh;
   z-index: 200;
+  @media screen and (max-width: $tabletScreenMax) and (min-width: $tabletScreenMin) {    
+    margin-top: -13vh;
+  }
 }
 
 .about-border-effect {
@@ -75,6 +94,10 @@ $computerScreenMax: 4800px;
   border-style: solid;
   border-color: transparent #1D2027 #1D2027 transparent;
   border-width: 0px 0px 75px calc(100vw - 15px);
+  @media screen and (max-width: $tabletScreenMax) and (min-width: $tabletScreenMin) {    
+    border-width: 0px 0px 75px calc(100vw);
+    margin-bottom: -1px;
+  }
   @media screen and (max-width: $mobileScreenMax) and (min-width: $mobileScreenMin) { 
     border-width: 0px 0px 75px calc(100vw);
     margin-bottom: -1px;
@@ -88,6 +111,10 @@ $computerScreenMax: 4800px;
   border-color: transparent #1D2027 #1D2027 transparent;
   border-width: 0px 0px 75px calc(100vw - 15px);
   transform: rotate(180deg);
+  @media screen and (max-width: $tabletScreenMax) and (min-width: $tabletScreenMin) {    
+    border-width: 0px 0px 75px calc(100vw);
+    margin-top: -1px;
+  }
   @media screen and (max-width: $mobileScreenMax) and (min-width: $mobileScreenMin) { 
     border-width: 0px 0px 75px calc(100vw);
     margin-top: -1px;
@@ -121,6 +148,10 @@ $computerScreenMax: 4800px;
   height: $secondSecondMinHeight;
   width: $secondSecondMinHeight;
   border-radius: 50%;
+  @media screen and (max-width: $tabletScreenMax) and (min-width: $tabletScreenMin) {    
+    width: 20vh;
+    height: 20vh;  
+  }
   @media screen and (max-width: $mobileScreenMax) and (min-width: $mobileScreenMin) {
     width: 30vh;
     height: 30vh;
@@ -149,6 +180,9 @@ $computerScreenMax: 4800px;
   background: #1D2027;
   color: white;
   width: 100%;
+  @media screen and (max-width: $tabletScreenMax) and (min-width: $tabletScreenMin) {    
+    margin-top: -1px;
+  }
   @media screen and (max-width: $mobileScreenMax) and (min-width: $mobileScreenMin) { 
     margin-top: -1px;
   }
@@ -180,6 +214,10 @@ $computerScreenMax: 4800px;
   width: 90px;
   margin: 0px 2vw 10px 2vw;
   cursor: pointer;
+  @media screen and (max-width: $tabletScreenMax) and (min-width: $tabletScreenMin) {    
+    height: 60px;
+    width: 60px;
+  }
   @media screen and (max-width: $mobileScreenMax) and (min-width: $mobileScreenMin) { 
     height: 60px;
     width: 60px;
@@ -192,6 +230,10 @@ $computerScreenMax: 4800px;
   border-radius: 50px;
   margin: 0px 2vw 10px 2vw;
   cursor: pointer;
+  @media screen and (max-width: $tabletScreenMax) and (min-width: $tabletScreenMin) {    
+    height: 60px;
+    width: 60px;
+  }
   @media screen and (max-width: $mobileScreenMax) and (min-width: $mobileScreenMin) { 
     height: 60px;
     width: 60px;
