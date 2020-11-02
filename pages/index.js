@@ -46,8 +46,10 @@ const firstNameAnimation = {
 const Index = () => {
   const controls = useAnimation();
   const controls2 = useAnimation();
+  const controls3 = useAnimation();
   const [ref, inView] = useInView();
   const [ref2, inView2] = useInView();
+  const [ref3, inView3] = useInView();
 
   useEffect(() => {
     if (inView) {
@@ -67,6 +69,16 @@ const Index = () => {
       }))
     }
   }, [controls2, inView2]);
+  
+  useEffect(() => {
+    if (inView3) {
+      controls3.start(i => ({
+        opacity: 1,
+        scale: 1,
+        transition: { duration: 2, ease: easing },
+      }))
+    }
+  }, [controls3, inView3]);
 
   const [tools] = useState([{
     logo: 'https://imgur.com/ZjOSRuc.png',
@@ -181,9 +193,14 @@ const Index = () => {
         <div className="clients-container">
           {
             clients.map(client => (
-              <div className="client-card" style={client.style}>
+              <motion.div ref={ref3}
+              animate={controls3}
+              whileHover={{ scale: 1.1 }}
+              title={client.name}
+              initial={{ opacity: 0, scale: 0.5, transition: { duration: 1, ease: easing } }}
+              className="client-card" style={client.style}>
                 <img className="client-logo" src={client.logo} />
-              </div>
+              </motion.div>
             ))
           }
         </div>
