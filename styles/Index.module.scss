@@ -248,7 +248,6 @@ $computerScreenMax: 4800px;
   min-height: 20vh;
   margin-top: -5vh;
   margin-bottom: 20px;
-  cursor: pointer;
 }
 
 .portfolio-section p:first-child {
@@ -268,6 +267,7 @@ $computerScreenMax: 4800px;
   margin: 0px 20px;
   text-align: center;
   border-radius: 10px;
+  cursor: pointer;
 }
 .client-logo {
   max-width: 12vw;
