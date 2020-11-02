@@ -4,10 +4,10 @@ import '../styles/Navigation.module.scss';
 const Navigation = () => {
     return (
         <div className="navigation-container">
-            <div className="navigation-items">Home</div>
-            <div className="navigation-items">About</div>
-            <div className="navigation-items">Portfolio</div>
-            <div className="navigation-items">Contact</div>
+            <a href="#home" className="navigation-items">Home</a>
+            <a href="#about" className="navigation-items">About</a>
+            <a href="#portfolio" className="navigation-items">Portfolio</a>
+            <a href="#contact" className="navigation-items">Contact</a>
         </div>
     )
 };

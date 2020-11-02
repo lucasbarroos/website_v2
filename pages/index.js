@@ -139,7 +139,7 @@ const Index = () => {
   }]);
 
   return (
-    <motion.div initial="initial" exit={{ opacity: 0 }}>
+    <motion.div id="home" initial="initial" exit={{ opacity: 0 }}>
       <HeaderNavigation />
       <div className="container">
         <motion.div {...firstNameAnimation} className="title">
@@ -153,7 +153,7 @@ const Index = () => {
         </motion.div>
         <motion.img className="picture1" {...homePictureAnimation} src="https://imgur.com/SmqPv9i.jpeg" />
       </div>
-      <div className="about-container">
+      <div id="about" className="about-container">
         <div className="about-border-effect" />
         <div className="about-section">
           <div className="about-section-first-content">
@@ -188,7 +188,7 @@ const Index = () => {
         </div>
         <div className="about-border-effect-end" />
       </div>
-      <div className="portfolio-section">
+      <div id="portfolio" className="portfolio-section">
         <p>Some clients I've worked</p>
         <div className="clients-container">
           {
@@ -208,7 +208,9 @@ const Index = () => {
       <motion.div ref={ref}
         animate={controls}
         initial={{ x: -900, opacity: 0.6, transition: { duration: 0.5, ease: easing } }}
-        className="contact-section">
+        className="contact-section"
+        id="contact"
+        >
         <p>Contact me</p>
         <input className="contact-input" placeholder="Name" />
         <input className="contact-input" placeholder="E-mail" />

@@ -21,6 +21,9 @@ $computerScreenMax: 4800px;
   @media screen and (max-width: $mobileScreenMax) and (min-width: $mobileScreenMin) { 
     display: none;
   }
+  a {
+    text-decoration: none;
+  }
 }
 
 .navigation-items {
