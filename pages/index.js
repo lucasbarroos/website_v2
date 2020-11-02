@@ -68,12 +68,12 @@ const Index = () => {
     }
   }, [controls2, inView2]);
 
-  const [tools, setTools] = useState([{
+  const [tools] = useState([{
     logo: 'https://imgur.com/ZjOSRuc.png',
     label: 'React',
     rounded: false,
   }, {
-    logo: 'https://imgur.com/nJIx73x.png',
+    logo: 'https://imgur.com/m1L2Hko.png',
     label: 'NodeJS',
     rounded: true,
   }, {
@@ -97,7 +97,34 @@ const Index = () => {
     label: 'Docker',
     rounded: true,
   },
-  ])
+  ]);
+
+  const [clients] = useState([{
+    name: 'Rina',
+    logo: 'https://imgur.com/XhDKuiZ.png',
+  }, {
+    name: 'Petrobras',
+    logo: 'https://imgur.com/0hYysKw.png',
+  }, {
+    name: 'BP Petroleum',
+    logo: 'https://imgur.com/9E2JJOb.png',
+  }, {
+    name: 'Flightech',
+    logo: 'https://imgur.com/fnYvntc.png',
+    style: {
+      backgroundColor: '#031f46',
+    },
+  }, {
+    name: 'Petronas',
+    logo: 'https://imgur.com/ICSRP1O.png',
+  }, {
+    name: 'Omni Táxi Aéreo',
+    logo: 'https://imgur.com/KUqTBbQ.png',
+    style: {
+      backgroundColor: '#192a39',
+      padding: '30px 10px',
+    },
+  }]);
 
   return (
     <motion.div initial="initial" exit={{ opacity: 0 }}>
@@ -122,9 +149,9 @@ const Index = () => {
               <motion.img {...aboutPictureAnimation} className="about-section-picture" src="https://imgur.com/Hdj7B9M.jpeg" />
             </div>
             <span className="about-section-text">
-              I'm a Fullstack Developer with 6 years of experience.
-              I really love coding and studying, without excuses. Every time I’m searching for new features and ideas to increment my career.
-              When you love your profession, you will never work.
+              I'm a Fullstack Developer, with 6 years of full-time work.
+              Based in Brazil, I have a lot of experience developing software with high scalability and quality to attend the most kind of clients in the engineering world.
+              I really loving studying! Always I have new repositories with the most famous frameworks and technologies in my stack (Follow me on Github to see my activities :D).
             </span>
           </div>
           <div
@@ -148,6 +175,18 @@ const Index = () => {
           </div>
         </div>
         <div className="about-border-effect-end" />
+      </div>
+      <div className="portfolio-section">
+        <p>Some clients I've worked</p>
+        <div className="clients-container">
+          {
+            clients.map(client => (
+              <div className="client-card" style={client.style}>
+                <img className="client-logo" src={client.logo} />
+              </div>
+            ))
+          }
+        </div>
       </div>
       <motion.div ref={ref}
         animate={controls}

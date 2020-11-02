@@ -240,6 +240,37 @@ $computerScreenMax: 4800px;
   }
 }
 
+.portfolio-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 20vh;
+  margin-top: -5vh;
+}
+
+.portfolio-section p:first-child {
+  font-size: 2rem;
+}
+
+.clients-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.client-card {
+  width: 15vw;
+  margin: 0px 20px;
+  text-align: center;
+  border-radius: 10px;
+}
+.client-logo {
+  max-width: 12vw;
+}
+
 .contact-section {
   min-height: 20vh;
   display: flex;
