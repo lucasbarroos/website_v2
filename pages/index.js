@@ -69,7 +69,7 @@ const Index = () => {
       }))
     }
   }, [controls2, inView2]);
-  
+
   useEffect(() => {
     if (inView3) {
       controls3.start(i => ({
@@ -194,11 +194,12 @@ const Index = () => {
           {
             clients.map(client => (
               <motion.div ref={ref3}
-              animate={controls3}
-              whileHover={{ scale: 1.1 }}
-              title={client.name}
-              initial={{ opacity: 0, scale: 0.5, transition: { duration: 1, ease: easing } }}
-              className="client-card" style={client.style}>
+                key={client.name}
+                animate={controls3}
+                whileHover={{ scale: 1.1 }}
+                title={client.name}
+                initial={{ opacity: 0, scale: 0.5, transition: { duration: 1, ease: easing } }}
+                className="client-card" style={client.style}>
                 <img className="client-logo" src={client.logo} />
               </motion.div>
             ))
@@ -210,7 +211,7 @@ const Index = () => {
         initial={{ x: -900, opacity: 0.6, transition: { duration: 0.5, ease: easing } }}
         className="contact-section"
         id="contact"
-        >
+      >
         <p>Contact me</p>
         <input className="contact-input" placeholder="Name" />
         <input className="contact-input" placeholder="E-mail" />

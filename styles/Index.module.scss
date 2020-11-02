@@ -246,12 +246,19 @@ $computerScreenMax: 4800px;
   align-items: center;
   flex-direction: column;
   min-height: 20vh;
-  margin-top: -5vh;
   margin-bottom: 20px;
 }
 
-.portfolio-section p:first-child {
+.portfolio-section p {
   font-size: 2rem;
+  @media screen and (max-width: $tabletScreenMax) and (min-width: $tabletScreenMin) {    
+    font-size: 1.4rem;
+    text-align: center;
+  }
+  @media screen and (max-width: $mobileScreenMax) and (min-width: $mobileScreenMin) { 
+    font-size: 1.4rem;
+    text-align: center;
+  }
 }
 
 .clients-container {
